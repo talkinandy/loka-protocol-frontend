@@ -1,37 +1,34 @@
 import { Header } from '@/components/layout/Header'
 import { Dashboard } from '@/components/pages/Dashboard'
 import { LandingPage } from '@/components/pages/LandingPage'
+import { MinerDashboard } from '@/components/pages/MinerDashboard'
+import { LenderDashboard } from '@/components/pages/LenderDashboard'
+import { LoanMarketplace } from '@/components/pages/LoanMarketplace'
 import { useStore } from '@/store/useStore'
+import { GridPattern } from '@/components/magicui/grid-pattern'
+import { cn } from '@/lib/utils'
 
 function App() {
   const { currentView } = useStore()
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <GridPattern
+        strokeDasharray="4 2"
+        className={cn(
+          "[mask-image:radial-gradient(800px_circle_at_center,white,transparent)]",
+          "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
+        )}
+      />
       <Header />
-      <main className="container mx-auto px-4 py-6">
-        {currentView === 'dashboard' && <Dashboard />}
-        {currentView === 'marketplace' && (
-          <div className="text-center py-12">
-            <h1 className="text-3xl font-bold">Marketplace</h1>
-            <p className="text-muted-foreground mt-2">Coming soon...</p>
-          </div>
-        )}
-        {currentView === 'portfolio' && (
-          <div className="text-center py-12">
-            <h1 className="text-3xl font-bold">Portfolio</h1>
-            <p className="text-muted-foreground mt-2">Coming soon...</p>
-          </div>
-        )}
-        {currentView === 'create' && (
-          <div className="text-center py-12">
-            <h1 className="text-3xl font-bold">Create Contract</h1>
-            <p className="text-muted-foreground mt-2">Coming soon...</p>
-          </div>
-        )}
-        {!['dashboard', 'marketplace', 'portfolio', 'create'].includes(currentView) && (
-          <LandingPage />
-        )}
+      <main className="main-content relative z-10">
+        <div className={currentView === 'home' || !currentView ? '' : 'container'}>
+          {(currentView === 'home' || !currentView) && <LandingPage />}
+          {currentView === 'dashboard' && <Dashboard />}
+          {currentView === 'miners' && <MinerDashboard />}
+          {currentView === 'lenders' && <LenderDashboard />}
+          {currentView === 'marketplace' && <LoanMarketplace />}
+        </div>
       </main>
     </div>
   )

@@ -18,7 +18,7 @@ interface AppStore {
   
   // UI State
   isDarkMode: boolean
-  currentView: 'dashboard' | 'marketplace' | 'portfolio' | 'create'
+  currentView: 'home' | 'dashboard' | 'marketplace' | 'portfolio' | 'create' | 'miners' | 'lenders' | 'loan-application'
   
   // Actions
   toggleDarkMode: () => void
@@ -39,7 +39,7 @@ export const useStore = create<AppStore>((set, get) => ({
   
   // UI State
   isDarkMode: false,
-  currentView: 'dashboard',
+  currentView: 'home',
   
   // Actions
   toggleDarkMode: () => {
