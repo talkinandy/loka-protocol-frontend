@@ -42,13 +42,13 @@ export function Header() {
               <button
                 key={item.id}
                 onClick={() => setCurrentView(item.id)}
-                className={`relative transition-all hover:text-foreground ${
-                  currentView === item.id ? 'text-foreground' : 'text-muted-foreground'
+                className={`relative px-3 py-2 text-base font-medium transition-all hover:text-foreground rounded-md ${
+                  currentView === item.id ? 'text-foreground bg-loka-red-orange/10' : 'text-muted-foreground hover:bg-white/5'
                 } group`}
               >
                 {item.label}
-                <span className={`absolute -bottom-2 left-0 h-0.5 bg-primary transition-all ${
-                  currentView === item.id ? 'w-full' : 'w-0 group-hover:w-full'
+                <span className={`absolute -bottom-1 left-1/2 transform -translate-x-1/2 h-0.5 bg-loka-red-orange transition-all ${
+                  currentView === item.id ? 'w-8' : 'w-0 group-hover:w-6'
                 }`} />
               </button>
             ))}

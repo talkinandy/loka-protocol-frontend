@@ -92,21 +92,21 @@ export function LandingPage() {
               </div>
               
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
                 <ShimmerButton 
-                  className="shadow-2xl"
+                  className="shadow-2xl w-full sm:w-auto"
                   onClick={() => setCurrentView('miners')}
                 >
-                  <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white">
+                  <span className="text-lg font-semibold text-white">
                     I'm a Miner
                   </span>
-                  <ChevronRight className="ml-2 h-4 w-4" />
+                  <ChevronRight className="ml-2 h-5 w-5" />
                 </ShimmerButton>
                 
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="glass-hover border-white/10"
+                  className="glass-hover border-white/10 w-full sm:w-auto"
                   onClick={() => setCurrentView('lenders')}
                 >
                   I'm an Investor

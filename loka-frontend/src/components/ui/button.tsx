@@ -13,7 +13,7 @@ const buttonVariants = cva(
         destructive:
           "bg-gradient-to-r from-red-500 to-red-600 text-white hover:from-red-600 hover:to-red-700 shadow-lg hover:shadow-xl",
         outline:
-          "border-2 border-loka-red-orange/60 bg-transparent text-loka-red-orange hover:bg-loka-red-orange hover:text-white shadow-md hover:shadow-lg hover:border-loka-red-orange transition-all duration-300 backdrop-blur-sm",
+          "border-2 border-white/20 bg-transparent text-white hover:bg-loka-red-orange hover:text-white hover:border-loka-red-orange shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm",
         secondary:
           "bg-gradient-to-r from-slate-100 to-slate-200 text-slate-800 hover:from-slate-200 hover:to-slate-300 shadow-md hover:shadow-lg dark:from-slate-800 dark:to-slate-700 dark:text-slate-100 dark:hover:from-slate-700 dark:hover:to-slate-600",
         ghost: "bg-transparent text-foreground hover:bg-loka-red-orange/10 hover:text-loka-red-orange transition-colors duration-200",
@@ -25,10 +25,10 @@ const buttonVariants = cva(
         premium: "bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white shadow-xl hover:shadow-2xl hover:scale-[1.02] active:scale-95 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-500",
       },
       size: {
-        default: "h-11 px-6 text-sm font-medium", // 44px
-        sm: "h-9 px-4 text-xs font-medium", // 36px
-        lg: "h-12 px-8 text-base font-medium", // 48px
-        xl: "h-14 px-10 text-lg font-semibold", // 56px
+        default: "h-12 px-6 text-base font-medium", // 48px for better readability
+        sm: "h-10 px-4 text-sm font-medium", // 40px
+        lg: "h-14 px-8 text-lg font-medium", // 56px
+        xl: "h-16 px-10 text-xl font-semibold", // 64px
         icon: "h-10 w-10",
       },
     },
