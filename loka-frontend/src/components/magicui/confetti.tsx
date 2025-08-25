@@ -12,7 +12,7 @@ const Confetti = React.forwardRef<ConfettiRef, ConfettiProps>(
   ({ manualstart = false }, ref) => {
     const [isAnimating, setIsAnimating] = useState(!manualstart);
 
-    const fire = useCallback((options: any = {}) => {
+    const fire = useCallback((_options: any = {}) => {
       setIsAnimating(true);
       const timeout = setTimeout(() => setIsAnimating(false), 4000);
       return () => clearTimeout(timeout);
