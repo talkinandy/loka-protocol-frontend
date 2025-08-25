@@ -38,7 +38,7 @@ export function Header() {
                 onClick={() => setCurrentView(item.id)}
                 className={`relative px-4 py-2 text-base font-semibold transition-all duration-200 rounded-lg ${
                   currentView === item.id 
-                    ? 'text-white bg-gradient-to-r from-loka-red-orange to-loka-orange shadow-lg shadow-loka-red-orange/25' 
+                    ? 'text-white bg-gradient-to-r from-[#F74B37] to-[#F5681B] shadow-lg shadow-[#F74B37]/25' 
                     : 'text-gray-300 hover:text-white hover:bg-white/10'
                 }`}
               >
