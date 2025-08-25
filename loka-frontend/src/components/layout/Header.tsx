@@ -15,64 +15,56 @@ export function Header() {
   ]
   
   return (
-    <header className="sticky top-0 z-50 w-full glass border-b border-white/10">
-      <div className="container flex h-16 items-center">
-        <div className="mr-4 hidden md:flex">
-          <a className="mr-8 flex items-center group" href="/">
-            <div className="relative hidden md:block">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 backdrop-blur-xl bg-background/95 h-20 overflow-hidden">
+      <div className="container mx-auto px-4 h-full">
+        <div className="flex h-20 items-center justify-between overflow-hidden">
+          {/* Logo */}
+          <div className="flex items-center shrink-0">
+            <a className="flex items-center group" href="/" onClick={() => setCurrentView('home')}>
               <img 
-                src="/assets/logos/loka-logo-horizontal.svg" 
+                src="/assets/logos/loka-logo-horizontal.png" 
                 alt="LOKA Protocol"
-                className="h-10 transition-transform group-hover:scale-105"
-                style={{ filter: 'brightness(0) invert(1)' }}
+                className="h-8 w-auto max-w-[200px] max-h-8 object-contain transition-transform group-hover:scale-105"
+                style={{ height: '32px', maxHeight: '32px', width: 'auto', maxWidth: '200px' }}
               />
-              <div className="absolute inset-0 bg-primary/10 blur-2xl group-hover:bg-primary/20 transition-colors" />
-            </div>
-            <div className="relative md:hidden">
-              <img 
-                src="/assets/logos/loka-symbol-only.svg" 
-                alt="LOKA"
-                className="h-10 w-10 transition-transform group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-primary/20 blur-xl group-hover:bg-primary/30 transition-colors" />
-            </div>
-          </a>
-          <nav className="flex items-center space-x-8 text-sm font-medium">
+            </a>
+          </div>
+          
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-2">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => setCurrentView(item.id)}
-                className={`relative px-3 py-2 text-base font-medium transition-all hover:text-foreground rounded-md ${
-                  currentView === item.id ? 'text-foreground bg-loka-red-orange/10' : 'text-muted-foreground hover:bg-white/5'
-                } group`}
+                className={`relative px-4 py-2 text-base font-semibold transition-all duration-200 rounded-lg ${
+                  currentView === item.id 
+                    ? 'text-white bg-gradient-to-r from-loka-red-orange to-loka-orange shadow-lg shadow-loka-red-orange/25' 
+                    : 'text-gray-300 hover:text-white hover:bg-white/10'
+                }`}
               >
                 {item.label}
-                <span className={`absolute -bottom-1 left-1/2 transform -translate-x-1/2 h-0.5 bg-loka-red-orange transition-all ${
-                  currentView === item.id ? 'w-8' : 'w-0 group-hover:w-6'
-                }`} />
               </button>
             ))}
           </nav>
-        </div>
-        
-        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-          <div className="w-full flex-1 md:w-auto md:flex-none">
+          
+          {/* Right side actions */}
+          <div className="flex items-center space-x-3">
+            {/* Mobile Menu Button */}
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden glass-hover"
+              className="lg:hidden h-10 w-10"
             >
               <Menu className="h-5 w-5" />
               <span className="sr-only">Toggle menu</span>
             </Button>
-          </div>
-          
-          <nav className="flex items-center space-x-3">
+            
+            {/* Theme Toggle */}
             <Button
               variant="ghost"
               size="icon"
               onClick={toggleDarkMode}
-              className="glass-hover"
+              className="hidden lg:flex h-10 w-10"
             >
               {isDarkMode ? (
                 <Sun className="h-5 w-5" />
@@ -82,8 +74,9 @@ export function Header() {
               <span className="sr-only">Toggle theme</span>
             </Button>
             
+            {/* Connect Wallet */}
             <ShineBorder
-              className="text-center text-sm"
+              className="hidden lg:block"
               color={["#F74B37", "#F5681B", "#F74B37"]}
               borderRadius={12}
               borderWidth={1.5}
@@ -91,13 +84,13 @@ export function Header() {
             >
               <Button 
                 variant="ghost" 
-                size="sm" 
-                className="bg-transparent border-0 px-6 h-10 font-semibold hover:text-primary transition-colors"
+                size="sm"
+                className="bg-transparent border-0 px-6 h-10 text-sm font-semibold text-white hover:text-loka-orange transition-colors"
               >
                 Connect Wallet
               </Button>
             </ShineBorder>
-          </nav>
+          </div>
         </div>
       </div>
     </header>

@@ -1,6 +1,6 @@
 import { Header } from '@/components/layout/Header'
 import { Dashboard } from '@/components/pages/Dashboard'
-import { LandingPage } from '@/components/pages/LandingPage'
+import ModernHomePage from '@/components/pages/ModernHomePage'
 import { MinerDashboard } from '@/components/pages/MinerDashboard'
 import { LenderDashboard } from '@/components/pages/LenderDashboard'
 import { LoanMarketplace } from '@/components/pages/LoanMarketplace'
@@ -17,13 +17,13 @@ function App() {
         strokeDasharray="4 2"
         className={cn(
           "[mask-image:radial-gradient(800px_circle_at_center,white,transparent)]",
-          "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
+          "fixed inset-0 h-full w-full opacity-50 -z-10",
         )}
       />
       <Header />
-      <main className="main-content relative z-10">
+      <main className="main-content relative pt-20">
         <div className={currentView === 'home' || !currentView ? '' : 'container'}>
-          {(currentView === 'home' || !currentView) && <LandingPage />}
+          {(currentView === 'home' || !currentView) && <ModernHomePage />}
           {currentView === 'dashboard' && <Dashboard />}
           {currentView === 'miners' && <MinerDashboard />}
           {currentView === 'lenders' && <LenderDashboard />}

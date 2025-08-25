@@ -129,6 +129,59 @@ export const generateOrderBook = (): OrderBookEntry[] => {
   })
 }
 
+export const mockLoanOpportunities = [
+  {
+    id: 'L-4821',
+    hashrate: '2000',
+    poolBalance: '45.2',
+    requesting: '8.1',
+    collateral: '8.9',
+    expectedReturn: '22',
+    duration: 90,
+  },
+  {
+    id: 'L-4835',
+    hashrate: '500',
+    poolBalance: '12.3',
+    requesting: '2.0',
+    collateral: '2.2',
+    expectedReturn: '19',
+    duration: 90,
+  },
+  {
+    id: 'L-4842',
+    hashrate: '1500',
+    poolBalance: '28.7',
+    requesting: '5.5',
+    collateral: '6.1',
+    expectedReturn: '21',
+    duration: 180,
+  },
+  {
+    id: 'L-4856',
+    hashrate: '3000',
+    poolBalance: '67.3',
+    requesting: '12.0',
+    collateral: '13.2',
+    expectedReturn: '24',
+    duration: 90,
+  },
+];
+
+export const mockData = {
+  marketOverview: {
+    totalValueLocked: 14,
+    activeHashrate: 5195,
+    dailyRevenue: 0.005985,
+    activeContracts: 7,
+  },
+  loanOpportunities: mockLoanOpportunities,
+  hashpriceData: generateHashpriceData(),
+  contracts: generateMockContracts(),
+  orderBook: generateOrderBook(),
+  marketData: mockMarketData,
+};
+
 export const mockHashpriceData = generateHashpriceData()
 export const mockContracts = generateMockContracts()
 export const mockOrderBook = generateOrderBook()

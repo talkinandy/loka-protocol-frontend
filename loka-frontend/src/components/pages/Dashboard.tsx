@@ -148,15 +148,7 @@ export function Dashboard() {
           </BlurFade>
           
           {/* Loan Calculator */}
-          <BlurFade delay={0.45} inView>
-            <MagicCard className="p-6" gradientColor="rgba(247, 75, 55, 0.05)">
-              <div className="flex items-center gap-2 mb-4">
-                <Calculator className="h-5 w-5 text-primary" />
-                <h3 className="text-lg font-semibold">Quick Calculator</h3>
-              </div>
-              <LoanCalculator />
-            </MagicCard>
-          </BlurFade>
+          <LoanCalculator />
           
           {/* Risk Disclosure */}
           <BlurFade delay={0.5} inView>

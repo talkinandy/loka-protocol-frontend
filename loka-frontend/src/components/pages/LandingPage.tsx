@@ -19,7 +19,7 @@ function ProtocolFlow() {
 
   return (
     <div ref={containerRef} className="relative w-full mx-auto max-w-4xl h-[300px]">
-      <div className="absolute inset-0 flex items-center justify-between px-12">
+      <div className="absolute inset-0 flex items-center justify-between px-8 md:px-12">
         <div ref={minerRef} className="flex flex-col items-center gap-3">
           <Circle className="bg-gradient-to-br from-orange-500 to-red-500 text-white border-0 shadow-glow-orange">
             <Cpu className="h-5 w-5" />
@@ -106,7 +106,7 @@ export function LandingPage() {
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="glass-hover border-white/10 w-full sm:w-auto"
+                  className="w-full sm:w-auto button-outline-fix"
                   onClick={() => setCurrentView('lenders')}
                 >
                   I'm an Investor
@@ -118,7 +118,7 @@ export function LandingPage() {
           
           {/* Protocol Flow Visualization */}
           <BlurFade delay={0.5} inView>
-            <div className="mt-20">
+            <div className="mt-20 flex justify-center">
               <ProtocolFlow />
             </div>
           </BlurFade>
@@ -127,7 +127,7 @@ export function LandingPage() {
 
       {/* Core Innovation Section */}
       <section className="relative py-20 px-4 bg-gradient-to-b from-transparent to-background/50">
-        <div className="container mx-auto max-w-7xl">
+        <div className="container mx-auto max-w-6xl">
           <BlurFade delay={0.25} inView>
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">
@@ -209,7 +209,7 @@ export function LandingPage() {
 
       {/* How It Works Section */}
       <section className="relative py-20 px-4">
-        <div className="container mx-auto max-w-7xl">
+        <div className="container mx-auto max-w-6xl">
           <BlurFade delay={0.25} inView>
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">How It Works</h2>
@@ -259,7 +259,7 @@ export function LandingPage() {
 
       {/* Key Features Section */}
       <section className="relative py-20 px-4 bg-gradient-to-t from-transparent to-background/50">
-        <div className="container mx-auto max-w-7xl">
+        <div className="container mx-auto max-w-6xl">
           <BlurFade delay={0.25} inView>
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">
