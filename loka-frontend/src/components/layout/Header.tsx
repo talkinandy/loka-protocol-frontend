@@ -22,10 +22,14 @@ export function Header() {
           <div className="flex items-center shrink-0">
             <a className="flex items-center group" href="/" onClick={() => setCurrentView('home')}>
               <img 
-                src="/assets/logos/loka-logo-horizontal.png" 
+                src="/assets/logos/loka-logo-horizontal.svg" 
                 alt="LOKA Protocol"
                 className="h-8 w-auto max-w-[200px] max-h-8 object-contain transition-transform group-hover:scale-105"
                 style={{ height: '32px', maxHeight: '32px', width: 'auto', maxWidth: '200px' }}
+                onError={(e) => {
+                  console.error('Logo failed to load:', e);
+                  e.currentTarget.src = '/assets/logos/loka-logo.svg';
+                }}
               />
             </a>
           </div>
@@ -38,7 +42,7 @@ export function Header() {
                 onClick={() => setCurrentView(item.id)}
                 className={`relative px-4 py-2 text-base font-semibold transition-all duration-200 rounded-lg ${
                   currentView === item.id 
-                    ? 'text-white bg-gradient-to-r from-[#F74B37] to-[#F5681B] shadow-lg shadow-[#F74B37]/25' 
+                    ? 'text-white !text-white bg-gradient-to-r from-[#F74B37] to-[#F5681B] shadow-lg shadow-[#F74B37]/25' 
                     : 'text-gray-300 hover:text-white hover:bg-white/10'
                 }`}
               >
