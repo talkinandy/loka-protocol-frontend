@@ -21,7 +21,7 @@ export function LoanMarketplace() {
   const [, setUserType] = useState<'miner' | 'lender' | null>(null)
 
   return (
-    <div className="min-h-screen py-8">
+    <div className="min-h-screen pt-32 pb-8 md:pt-40 md:pb-8">
       {/* Header Section */}
       <BlurFade delay={0.1} inView>
         <div className="text-center mb-12">

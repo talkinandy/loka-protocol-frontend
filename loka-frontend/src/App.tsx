@@ -21,7 +21,7 @@ function App() {
         )}
       />
       <Header />
-      <main className="main-content relative pt-20">
+      <main className="main-content relative pt-24 md:pt-28">
         <div className={currentView === 'home' || !currentView ? '' : 'container'}>
           {(currentView === 'home' || !currentView) && <ModernHomePage />}
           {currentView === 'dashboard' && <Dashboard />}

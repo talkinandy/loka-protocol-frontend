@@ -19,7 +19,7 @@ export function Dashboard() {
   // const { userPosition } = useStore()
   
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-32 pb-8 md:pt-40 md:pb-8">
       {/* Modern Header with Gradient */}
       <BlurFade delay={0.1} inView>
         <div className="relative overflow-hidden rounded-2xl mb-8">

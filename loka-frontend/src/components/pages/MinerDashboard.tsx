@@ -27,7 +27,7 @@ export function MinerDashboard() {
   // const dailyRepayment = (hashrate / 1000) * 0.00000120 * 30 // Simplified calculation
 
   return (
-    <div className="min-h-screen py-8">
+    <div className="min-h-screen pt-32 pb-8 md:pt-40 md:pb-8">
       {/* Header Section */}
       <BlurFade delay={0.1} inView>
         <div className="mb-12">

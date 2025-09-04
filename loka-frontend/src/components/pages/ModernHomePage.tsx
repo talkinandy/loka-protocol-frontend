@@ -42,7 +42,7 @@ const ModernHomePage: React.FC = () => {
       />
 
       {/* Hero Section */}
-      <section className="relative py-40 px-4">
+      <section className="relative pt-32 pb-40 md:pt-40 md:pb-40 px-4">
         <div className="container mx-auto max-w-7xl text-center">
           <BlurFade delay={0.1} inView>
             <div className="mb-12">
